@@ -106,5 +106,3 @@ ggsave_illustrate("figure.pdf", p, svg_copy = TRUE)
 预设基于 [Nature 图稿要求](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) 和 [Nature 投稿说明](https://www.nature.com/nature/for-authors/initial-submission)：常规图中文字通常为 5–7 pt，优先 Arial/Helvetica，图宽常用 90/180 mm，推荐可编辑矢量稿。`line_pt = 0.5` 位于其[延伸数据线宽建议](https://research-figure-guide.nature.com/figures/extended-data-formatting-guidelines/)的 0.25–1 pt 范围内。不同 Nature 系列期刊及稿件阶段可能有更具体的要求；这里提供可调整的起点，不自动检查所有图层、嵌入位图或投稿规范。
 
 导出使用 `grDevices::cairo_pdf()`。如图中包含必须栅格化的内容，`fallback_dpi` 默认 450；普通线条和文字仍以矢量方式输出。字体需在本机正确安装，导出后请在目标编辑器中确认文字可编辑、线宽和布局无误。
-
-`DESCRIPTION` 中的维护者邮箱是项目初始化占位值；对外发布前请改成真实联系人。
