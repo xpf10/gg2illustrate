@@ -1,0 +1,7 @@
+export(ggsave_illustrate)
+export(fontsize_pt)
+export(label_log)
+export(linewidth_pt)
+export(stroke_pt)
+export(theme_illustrate)
+export(theme_illustrate_pubr)

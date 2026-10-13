@@ -1,0 +1,15 @@
+Package: gg2illustrate
+Title: Prepare ggplot2 Figures for Illustration Workflows
+Version: 0.1.0
+Authors@R: person("gg2illustrate", "contributors", role = c("aut", "cre"), email = "gg2illustrate@example.org")
+Author: gg2illustrate contributors
+Maintainer: gg2illustrate contributors <gg2illustrate@example.org>
+Description: Provides a compact ggplot2 theme, point-based line and text size
+    helpers, plain-text mathematical labels, and Cairo PDF export at journal
+    figure dimensions. These tools reduce manual adjustment when figures are
+    opened in vector graphics editors.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: ggplot2 (>= 3.5.0), grDevices, grid
+Suggests: svglite (>= 2.0.0), xml2, systemfonts, ggpubr (>= 0.6.3)

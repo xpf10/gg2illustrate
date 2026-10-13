@@ -1,0 +1,8 @@
+^\.r-lib$
+^\.\.Rcheck$
+^gg2illustrate\.Rcheck$
+^gg2illustrate_.*\.tar\.gz$
+^sample\.pdf$
+^sample\.svg$
+^sample-ggpubr\.pdf$
+^sample-ggpubr\.svg$
