@@ -4,7 +4,20 @@
 
 ## 安装
 
-在项目目录运行：
+从 GitHub 安装最新版本：
+
+```r
+install.packages("remotes")
+remotes::install_github("xpf10/gg2illustrate")
+```
+
+如需同时导出便于在 Illustrator 中编辑的 SVG，再安装可选依赖：
+
+```r
+install.packages(c("svglite", "xml2", "systemfonts"))
+```
+
+也可以下载源码后，在项目目录运行：
 
 ```r
 install.packages("ggplot2")
