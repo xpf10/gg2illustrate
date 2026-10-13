@@ -26,6 +26,27 @@ install.packages(".", repos = NULL, type = "source")
 
 需要带 Cairo 支持的 R。运行 `capabilities("cairo")` 应返回 `TRUE`。使用的字体也须安装在导出图像的电脑上。
 
+## 函数帮助
+
+安装后可在 R 中查看完整参数和示例：
+
+```r
+library(gg2illustrate)
+?gg2illustrate
+?ggsave_illustrate
+?theme_illustrate
+```
+
+| 函数 | 用途 |
+| --- | --- |
+| `ggsave_illustrate()` | 按期刊常用尺寸导出 Cairo PDF，可选同时导出 SVG |
+| `theme_illustrate()` | ggplot2 基础主题，字号和主题线宽以 pt 传入 |
+| `theme_illustrate_pubr()` | 用于 ggpubr 图形及 `ggarrange()` 的主题 |
+| `label_log()` | 创建单段 Unicode 对数下标标签 |
+| `linewidth_pt()` | 将 pt 线宽换算为 ggplot2 `linewidth` 参数 |
+| `fontsize_pt()` | 将 pt 字号换算为文本 geom 的 `size` 参数 |
+| `stroke_pt()` | 将 pt 换算为点形状边框的 `stroke` 参数 |
+
 ## 快速使用
 
 ```r
@@ -83,6 +104,24 @@ ggsave_illustrate("ggpubr-figure.pdf", figure, column = "double",
 ```
 
 `ggarrange()` 请先给各子图设置主题，再组合；组合后的单页图可直接导出。多页 `ggarrange()` 返回的是图列表，目前需逐页导出。`linewidth_pt()` 可用于支持 `linewidth` 的 ggpubr 函数；散点 `size`、箱体 `width` 等参数不是线宽，仍按 ggpubr 自身的含义设置。统计标注的 `size` 可用 `fontsize_pt()` 换算。
+
+### ggrepel 与其他扩展包
+
+对于沿用 ggplot2 图层接口的扩展包，可直接组合基础主题和单位换算函数。`ggrepel` 是可选依赖，标签字号可继续用 `fontsize_pt()`：
+
+```r
+install.packages("ggrepel")
+
+library(ggplot2)
+library(gg2illustrate)
+
+ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) +
+  geom_point() +
+  ggrepel::geom_text_repel(size = fontsize_pt(6)) +
+  theme_illustrate(family = "Segoe UI")
+```
+
+目前不需要为每个扩展包都增加包装函数。若后续包有不同的单位、主题接口或组合行为，再新增该包的可选适配层；核心依赖保持精简，适配层只在相应扩展包安装时使用。适配函数应各自提供帮助页和示例。
 
 ### 下标标签与 Illustrator
 

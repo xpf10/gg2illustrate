@@ -11,4 +11,4 @@ BugReports: https://github.com/xpf10/gg2illustrate/issues
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
 Imports: ggplot2 (>= 3.5.0), grDevices, grid
-Suggests: svglite (>= 2.0.0), xml2, systemfonts, ggpubr (>= 0.6.3)
+Suggests: svglite (>= 2.0.0), xml2, systemfonts, ggpubr (>= 0.6.3), ggrepel
